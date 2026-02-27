@@ -3,205 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>إلى بابا</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-
+<title>Ramy Soliman Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
 <style>
+/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3,#b5179e);
-    font-family:'Cairo',sans-serif;
-    overflow:hidden;
+    font-family:'Cairo', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #162447, #1f4068);
+    color:#fff;
+    overflow-x:hidden;
 }
+a{color:#ff4d6d;text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-/* العنوان فوق */
-.title{
+/* Header */
+header{
+    text-align:center;
+    padding:50px 20px;
+    background: linear-gradient(135deg, #ff4d6d, #ff758c);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+header h1{
     font-family:'Great Vibes', cursive;
     font-size:70px;
     color:#fff;
-    text-shadow: 0 0 10px #fff, 0 0 20px #ff4d6d, 0 0 30px #ff4d6d, 0 0 40px #ff4d6d;
-    margin-bottom:50px;
+    text-shadow: 0 0 10px #fff,0 0 20px #ff4d6d,0 0 30px #ff758c;
     animation: glow 2s ease-in-out infinite alternate;
 }
+header p{
+    margin-top:10px;
+    font-size:20px;
+    color:#ffe6e6;
+}
 
+/* Glow animation */
 @keyframes glow{
-    from {text-shadow: 0 0 5px #fff, 0 0 10px #ff4d6d, 0 0 15px #ff4d6d;}
-    to {text-shadow: 0 0 15px #fff, 0 0 25px #ff4d6d, 0 0 35px #ff4d6d;}
+    from {text-shadow:0 0 10px #fff,0 0 20px #ff4d6d,0 0 30px #ff758c;}
+    to {text-shadow:0 0 20px #fff,0 0 30px #ff4d6d,0 0 40px #ff758c;}
 }
 
-/* الظرف */
-.envelope{
-    position:relative;
-    width:280px;
-    height:190px;
-    background:#ffffff;
+/* Sections */
+section{
+    max-width:1000px;
+    margin:50px auto;
+    background:rgba(255,255,255,0.05);
+    padding:40px 30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    animation: fadeInUp 1s ease forwards;
+    opacity:0;
+}
+@keyframes fadeInUp{
+    from{opacity:0;transform:translateY(50px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+h2{
+    color:#ff4d6d;
+    font-size:36px;
+    margin-bottom:20px;
+    border-bottom:2px solid #ff758c;
+    padding-bottom:10px;
+    width:fit-content;
+}
+
+/* Job / Experience Card */
+.job{
+    margin-bottom:30px;
+    padding:20px;
+    border-left:5px solid #ff4d6d;
+    background:rgba(0,0,0,0.2);
     border-radius:10px;
-    cursor:pointer;
-    box-shadow:0 20px 40px rgba(0,0,0,0.3);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    transition:0.5s;
-    z-index:2;
+    transition:0.3s;
+}
+.job:hover{
+    transform:translateX(10px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.job h3{
+    font-size:28px;
+    color:#ffe6e6;
+    margin-bottom:10px;
+}
+.job p{
+    font-size:18px;
+    line-height:1.7;
+    color:#fff;
 }
 
-.envelope:before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#c1121f;
-    clip-path:polygon(0 0, 50% 60%, 100% 0);
-    transition:0.6s;
-    border-radius:10px 10px 0 0;
-    z-index:1;
-}
-
-.envelope.open:before{
-    transform:rotateX(180deg);
-    transform-origin:top;
-}
-
-.envelope span{
-    position:relative;
-    z-index:3;
-    font-size:24px;
+/* Skills */
+.skills span{
+    display:inline-block;
+    background:#ff4d6d;
+    color:#fff;
+    padding:5px 15px;
+    margin:5px;
+    border-radius:20px;
     font-weight:bold;
-    color:white;
-    background:#e63946;
+}
+
+/* Contact */
+.contact a{
+    display:inline-block;
+    background:#ff4d6d;
     padding:10px 20px;
     border-radius:25px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    margin-top:10px;
+    color:#fff;
+    font-weight:bold;
+    transition:0.3s;
+}
+.contact a:hover{
+    background:#ff758c;
 }
 
-/* الجواب */
-.letter{
-    position:fixed;
-    bottom:-100%;
-    left:50%;
-    transform:translateX(-50%);
-    width:90%;
-    max-width:600px;
-    height:80%;
-    background:white;
-    border-radius:20px;
-    padding:40px;
-    overflow-y:auto;
-    box-shadow:0 30px 60px rgba(0,0,0,0.4);
-    transition:1s;
-    z-index:3;
+/* Section glow on hover */
+section:hover{
+    box-shadow:0 0 50px rgba(255,77,109,0.7);
 }
 
-.letter.show{
-    bottom:10%;
-}
-
-/* محتوى الرسالة */
-.letter h2{
-    text-align:center;
-    margin-bottom:20px;
-}
-
-.letter p{
-    line-height:1.8;
-    font-size:18px;
-    margin-bottom:15px;
-}
-
-.love{
-    margin-top:30px;
-    text-align:center;
-    font-family:'Great Vibes',cursive;
-    font-size:50px;
-    color:#c1121f;
-    opacity:0;
-    transition:1s;
-}
-
-.love.show{
-    opacity:1;
-}
-
-/* قلوب */
+/* Floating hearts animation */
 .heart{
     position:absolute;
-    bottom:-20px;
     font-size:20px;
+    color:#ff4d6d;
     animation:float 6s linear infinite;
-    opacity:0.6;
+    opacity:0.7;
 }
-
 @keyframes float{
     to{transform:translateY(-110vh);opacity:0;}
 }
-
-/* خلفية متحركة خفيفة */
-body::after{
-    content:'';
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
-    background-size:50px 50px;
-    pointer-events:none;
-    animation:moveBG 10s linear infinite;
-}
-
-@keyframes moveBG{
-    0%{background-position:0 0;}
-    100%{background-position:50px 50px;}
-}
 </style>
 </head>
-
 <body>
 
-<div class="title">RAMY</div>
+<!-- Floating hearts -->
+<div class="heart" style="left:10vw;">❤</div>
+<div class="heart" style="left:50vw;">❤</div>
+<div class="heart" style="left:80vw;">❤</div>
 
-<div class="envelope" onclick="openLetter()">
-    <span>❤ إلي بابا ❤</span>
-</div>
+<header>
+    <h1>Ramy Soliman Portfolio</h1>
+    <p>Portfolio & CV</p>
+</header>
 
-<div class="letter" id="letter">
-    <h2>كل سنة وأنت طيب يا بابا 🎉</h2>
-
-    <p>
-      كل سنه و انت احلى اب في العالم❤❤
-      ربنا ميحرمناش منك يا بابا و يخليك لينا 
-       
-         
-          you're the best,dad❤❤.    
-         
-            thanks for everything,dad💗
-         
-    </p>
-
-    <div class="love" id="loveText">
-         ❤i love you❤
+<section id="experience">
+    <h2>الخبرات المهنية</h2>
+    
+    <div class="job">
+        <h3>مهندس Call Center</h3>
+        <p>
+            خبرة 9 سنوات في مجال الكول سنتر، اكتسب خلالها مهارات احترافية في التواصل مع العملاء، إدارة فرق العمل، حل المشاكل التقنية والعملية، وضمان جودة الخدمات.
+        </p>
     </div>
-</div>
+    
+    <div class="job">
+        <h3>مهندس IT وكمبيوتر</h3>
+        <p>
+            عمل 4 سنوات كمهندس كمبيوتر، متخصص في صيانة الأجهزة، إدارة الشبكات، حماية الأنظمة، ودعم المستخدمين.
+            ساهم في تطوير بيئة العمل التقنية وتحسين الأداء العام للبنية التحتية.
+        </p>
+    </div>
+    
+    <div class="job">
+        <h3>مدرس كمبيوتر</h3>
+        <p>
+            عمل سنتين كمدرس كمبيوتر، حيث قام بتعليم الطلاب مهارات البرمجة، صيانة الأجهزة، وبرامج الحاسوب المختلفة، مع تطوير طرق تعليم مبتكرة لجعل التعليم ممتع وفعال.
+        </p>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>المهارات</h2>
+    <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>شبكات</span>
+        <span>صيانة أجهزة</span>
+        <span>تدريس</span>
+        <span>حل مشاكل العملاء</span>
+    </div>
+</section>
+
+<section id="contact">
+</section>
 
 <script>
-function openLetter(){
-    document.querySelector('.envelope').classList.add('open')
-    setTimeout(()=>{
-        document.getElementById('letter').classList.add('show');
-    },600);
-
-    setTimeout(()=>{
-        document.getElementById('loveText').classList.add('show');
-    },1500);
-}
-
-/* قلوب */
+/* قلوب طايرة */
 function createHeart(){
     const heart=document.createElement("div");
     heart.classList.add("heart");
