@@ -10,25 +10,24 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
     font-family:'Cairo', sans-serif;
-    background: linear-gradient(135deg, #1a1a2e, #162447, #1f4068);
+    background: linear-gradient(135deg, #0f0f1f, #1a1a2e, #111128);
     color:#fff;
     overflow-x:hidden;
 }
-a{color:#ff4d6d;text-decoration:none;}
-a:hover{text-decoration:underline;}
 
 /* Header */
 header{
     text-align:center;
     padding:50px 20px;
-    background: linear-gradient(135deg, #ff4d6d, #ff758c);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #1f1f3d, #2c2c55);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-bottom: 3px solid #ff4d6d;
 }
 header h1{
     font-family:'Great Vibes', cursive;
     font-size:70px;
-    color:#fff;
-    text-shadow: 0 0 10px #fff,0 0 20px #ff4d6d,0 0 30px #ff758c;
+    color:#ff4d6d;
+    text-shadow: 0 0 10px #ff758c, 0 0 20px #ff4d6d;
     animation: glow 2s ease-in-out infinite alternate;
 }
 header p{
@@ -39,8 +38,8 @@ header p{
 
 /* Glow animation */
 @keyframes glow{
-    from {text-shadow:0 0 10px #fff,0 0 20px #ff4d6d,0 0 30px #ff758c;}
-    to {text-shadow:0 0 20px #fff,0 0 30px #ff4d6d,0 0 40px #ff758c;}
+    from {text-shadow:0 0 10px #ff758c,0 0 20px #ff4d6d;}
+    to {text-shadow:0 0 20px #ff758c,0 0 30px #ff4d6d;}
 }
 
 /* Sections */
@@ -50,10 +49,15 @@ section{
     background:rgba(255,255,255,0.05);
     padding:40px 30px;
     border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    backdrop-filter: blur(5px);
+    box-shadow:0 15px 40px rgba(0,0,0,0.6);
+    backdrop-filter: blur(7px);
     animation: fadeInUp 1s ease forwards;
     opacity:0;
+    transition:0.3s;
+}
+section:hover{
+    box-shadow:0 0 60px rgba(255,77,109,0.8);
+    transform: scale(1.01);
 }
 @keyframes fadeInUp{
     from{opacity:0;transform:translateY(50px);}
@@ -72,20 +76,21 @@ h2{
 /* Job / Experience Card */
 .job{
     margin-bottom:30px;
-    padding:20px;
+    padding:25px;
     border-left:5px solid #ff4d6d;
-    background:rgba(0,0,0,0.2);
-    border-radius:10px;
-    transition:0.3s;
+    background:rgba(30,30,50,0.4);
+    border-radius:15px;
+    transition:0.4s;
 }
 .job:hover{
     transform:translateX(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    box-shadow:0 15px 40px rgba(0,0,0,0.5);
 }
 .job h3{
     font-size:28px;
     color:#ffe6e6;
     margin-bottom:10px;
+    text-shadow:0 0 5px #ff4d6d, 0 0 10px #ff758c;
 }
 .job p{
     font-size:18px;
@@ -98,18 +103,19 @@ h2{
     display:inline-block;
     background:#ff4d6d;
     color:#fff;
-    padding:5px 15px;
+    padding:7px 18px;
     margin:5px;
-    border-radius:20px;
+    border-radius:25px;
     font-weight:bold;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
 /* Contact */
 .contact a{
     display:inline-block;
     background:#ff4d6d;
-    padding:10px 20px;
-    border-radius:25px;
+    padding:12px 25px;
+    border-radius:30px;
     margin-top:10px;
     color:#fff;
     font-weight:bold;
@@ -119,34 +125,17 @@ h2{
     background:#ff758c;
 }
 
-/* Section glow on hover */
-section:hover{
-    box-shadow:0 0 50px rgba(255,77,109,0.7);
-}
-
-/* Floating hearts animation */
-.heart{
-    position:absolute;
-    font-size:20px;
-    color:#ff4d6d;
-    animation:float 6s linear infinite;
-    opacity:0.7;
-}
-@keyframes float{
-    to{transform:translateY(-110vh);opacity:0;}
-}
+/* Section animation delays */
+#experience{animation-delay:0.3s;}
+#skills{animation-delay:0.6s;}
+#contact{animation-delay:0.9s;}
 </style>
 </head>
 <body>
 
-<!-- Floating hearts -->
-<div class="heart" style="left:10vw;">❤</div>
-<div class="heart" style="left:50vw;">❤</div>
-<div class="heart" style="left:80vw;">❤</div>
-
 <header>
     <h1>Ramy Soliman Portfolio</h1>
-    <p>Portfolio & CV</p>
+    <p>Portfolio & CV - أفضل مهندس كمبيوتر</p>
 </header>
 
 <section id="experience">
@@ -189,21 +178,12 @@ section:hover{
 </section>
 
 <section id="contact">
+    <h2>تواصل معي</h2>
+    <p>للتواصل، يمكنك مراسلتي على الإيميل أو زيارة صفحتي على LinkedIn:</p>
+    <a href="mailto:ramy@example.com">ramy@example.com</a>
+    <br><br>
+    <a href="https://www.linkedin.com/in/ramysoliman" target="_blank">LinkedIn Profile</a>
 </section>
-
-<script>
-/* قلوب طايرة */
-function createHeart(){
-    const heart=document.createElement("div");
-    heart.classList.add("heart");
-    heart.innerHTML="❤";
-    heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(4+Math.random()*3)+"s";
-    document.body.appendChild(heart);
-    setTimeout(()=>heart.remove(),6000);
-}
-setInterval(createHeart,500);
-</script>
 
 </body>
 </html>
