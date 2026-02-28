@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ramy Soliman Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
 <style>
-/* Reset */
 *{margin:0;padding:0;box-sizing:border-box;}
+
 body{
     font-family:'Cairo', sans-serif;
     background: linear-gradient(135deg, #0f0f1f, #1a1a2e, #111128);
@@ -15,127 +16,133 @@ body{
     overflow-x:hidden;
 }
 
-/* Header */
+/* ===== Header ===== */
 header{
     text-align:center;
-    padding:50px 20px;
+    padding:70px 20px;
     background: linear-gradient(135deg, #1f1f3d, #2c2c55);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
     border-bottom: 3px solid #ff4d6d;
 }
+
+/* صورة البروفايل */
+.profile-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #ff4d6d;
+    box-shadow:0 0 30px rgba(255,77,109,0.8);
+    margin-bottom:25px;
+    transition:0.4s;
+}
+.profile-img:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 50px rgba(255,77,109,1);
+}
+
 header h1{
     font-family:'Great Vibes', cursive;
-    font-size:70px;
+    font-size:65px;
     color:#ff4d6d;
-    text-shadow: 0 0 10px #ff758c, 0 0 20px #ff4d6d;
-    animation: glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 15px #ff758c, 0 0 30px #ff4d6d;
 }
+
 header p{
-    margin-top:10px;
+    margin-top:15px;
     font-size:20px;
     color:#ffe6e6;
 }
 
-/* Glow animation */
-@keyframes glow{
-    from {text-shadow:0 0 10px #ff758c,0 0 20px #ff4d6d;}
-    to {text-shadow:0 0 20px #ff758c,0 0 30px #ff4d6d;}
-}
-
-/* Sections */
+/* ===== Sections ===== */
 section{
     max-width:1000px;
-    margin:50px auto;
+    margin:60px auto;
     background:rgba(255,255,255,0.05);
-    padding:40px 30px;
+    padding:45px 35px;
     border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.6);
-    backdrop-filter: blur(7px);
+    box-shadow:0 15px 45px rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
     animation: fadeInUp 1s ease forwards;
     opacity:0;
     transition:0.3s;
 }
+
 section:hover{
-    box-shadow:0 0 60px rgba(255,77,109,0.8);
+    box-shadow:0 0 70px rgba(255,77,109,0.8);
     transform: scale(1.01);
 }
+
 @keyframes fadeInUp{
     from{opacity:0;transform:translateY(50px);}
     to{opacity:1;transform:translateY(0);}
 }
 
+#experience{animation-delay:0.3s;}
+#skills{animation-delay:0.6s;}
+
 h2{
     color:#ff4d6d;
     font-size:36px;
-    margin-bottom:20px;
+    margin-bottom:25px;
     border-bottom:2px solid #ff758c;
     padding-bottom:10px;
     width:fit-content;
 }
 
-/* Job / Experience Card */
+/* ===== Job Cards ===== */
 .job{
-    margin-bottom:30px;
-    padding:25px;
-    border-left:5px solid #ff4d6d;
+    margin-bottom:35px;
+    padding:30px;
+    border-left:6px solid #ff4d6d;
     background:rgba(30,30,50,0.4);
     border-radius:15px;
     transition:0.4s;
 }
+
 .job:hover{
-    transform:translateX(10px);
-    box-shadow:0 15px 40px rgba(0,0,0,0.5);
+    transform:translateX(12px);
+    box-shadow:0 20px 50px rgba(0,0,0,0.6);
 }
+
 .job h3{
     font-size:28px;
     color:#ffe6e6;
-    margin-bottom:10px;
-    text-shadow:0 0 5px #ff4d6d, 0 0 10px #ff758c;
+    margin-bottom:15px;
+    text-shadow:0 0 10px #ff4d6d;
 }
+
 .job p{
     font-size:18px;
-    line-height:1.7;
+    line-height:1.8;
     color:#fff;
 }
 
-/* Skills */
+/* ===== Skills ===== */
 .skills span{
     display:inline-block;
     background:#ff4d6d;
     color:#fff;
-    padding:7px 18px;
-    margin:5px;
-    border-radius:25px;
-    font-weight:bold;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-}
-
-/* Contact */
-.contact a{
-    display:inline-block;
-    background:#ff4d6d;
-    padding:12px 25px;
+    padding:10px 20px;
+    margin:8px;
     border-radius:30px;
-    margin-top:10px;
-    color:#fff;
     font-weight:bold;
+    box-shadow:0 8px 20px rgba(0,0,0,0.4);
     transition:0.3s;
 }
-.contact a:hover{
+.skills span:hover{
     background:#ff758c;
+    transform:scale(1.05);
 }
-
-/* Section animation delays */
-#experience{animation-delay:0.3s;}
-#skills{animation-delay:0.6s;}
-#contact{animation-delay:0.9s;}
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Ramy Soliman Portfolio</h1>
-    <p>Portfolio & CV - أفضل مهندس كمبيوتر</p>
+    <img src="1772243421707.jpg" alt="Ramy Soliman" class="profile-img">
+    <h1>Ramy Soliman</h1>
+    <p>IT Engineer | Computer Specialist | Call Center Expert</p>
 </header>
 
 <section id="experience">
@@ -144,22 +151,27 @@ h2{
     <div class="job">
         <h3>مهندس Call Center</h3>
         <p>
-            خبرة 9 سنوات في مجال الكول سنتر، اكتسب خلالها مهارات احترافية في التواصل مع العملاء، إدارة فرق العمل، حل المشاكل التقنية والعملية، وضمان جودة الخدمات.
+            خبرة 9 سنوات في مجال الكول سنتر، اكتسب خلالها مهارات احترافية في التواصل الفعال مع العملاء،
+            إدارة فرق العمل، التعامل مع أنظمة إدارة المكالمات، حل المشكلات التقنية والعملية بسرعة وكفاءة،
+            وضمان تحقيق أعلى مستويات الجودة ورضا العملاء.
         </p>
     </div>
     
     <div class="job">
         <h3>مهندس IT وكمبيوتر</h3>
         <p>
-            عمل 4 سنوات كمهندس كمبيوتر، متخصص في صيانة الأجهزة، إدارة الشبكات، حماية الأنظمة، ودعم المستخدمين.
-            ساهم في تطوير بيئة العمل التقنية وتحسين الأداء العام للبنية التحتية.
+            خبرة 4 سنوات في مجال تكنولوجيا المعلومات، متخصص في صيانة أجهزة الحاسوب،
+            إدارة الشبكات، حماية الأنظمة، دعم المستخدمين، واستكشاف الأخطاء التقنية.
+            ساهم في تطوير البنية التحتية التقنية وتحسين الأداء العام داخل بيئة العمل.
         </p>
     </div>
     
     <div class="job">
         <h3>مدرس كمبيوتر</h3>
         <p>
-            عمل سنتين كمدرس كمبيوتر، حيث قام بتعليم الطلاب مهارات البرمجة، صيانة الأجهزة، وبرامج الحاسوب المختلفة، مع تطوير طرق تعليم مبتكرة لجعل التعليم ممتع وفعال.
+            خبرة سنتين في تدريس الحاسب الآلي، تعليم مهارات البرمجة الأساسية،
+            التعامل مع برامج الحاسوب المختلفة، وتبسيط المفاهيم التقنية للطلاب
+            باستخدام أساليب تعليم حديثة ومبتكرة.
         </p>
     </div>
 </section>
@@ -170,19 +182,12 @@ h2{
         <span>HTML</span>
         <span>CSS</span>
         <span>JavaScript</span>
-        <span>شبكات</span>
-        <span>صيانة أجهزة</span>
-        <span>تدريس</span>
-        <span>حل مشاكل العملاء</span>
+        <span>Networking</span>
+        <span>Hardware Maintenance</span>
+        <span>Technical Support</span>
+        <span>Customer Service</span>
+        <span>Teaching</span>
     </div>
-</section>
-
-<section id="contact">
-    <h2>تواصل معي</h2>
-    <p>للتواصل، يمكنك مراسلتي على الإيميل أو زيارة صفحتي على LinkedIn:</p>
-    <a href="mailto:ramy@example.com">ramy@example.com</a>
-    <br><br>
-    <a href="https://www.linkedin.com/in/ramysoliman" target="_blank">LinkedIn Profile</a>
 </section>
 
 </body>
